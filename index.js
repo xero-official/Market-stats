@@ -45,9 +45,10 @@ function updateDiff2() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 19905066.69);
+    var fix = text.toFixed(4);
 
 
-    $(".price2").html(text);
+    $(".price2").html(fix);
     setTimeout(updateDiff2(), 72000000000);
 
   });
@@ -76,8 +77,9 @@ function updateChain() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = `${data.ticker.last}` * 5000;
+    var fix = text.toFixed(5);
 
-    $(".chain").html(text);
+    $(".chain").html(fix);
     setTimeout(updateChain(), 72000000000);
 
   });
@@ -105,8 +107,9 @@ function updateXERO() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = `${data.ticker.last}` * 20000;
+    var fix = text.toFixed(5);
 
-    $(".xero").html(text);
+    $(".xero").html(fix);
     setTimeout(updateXERO(), 72000000000);
 
   });
@@ -134,8 +137,9 @@ function updateLink() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = `${data.ticker.last}` * 40000;
+    var fix = text.toFixed(5);
 
-    $(".link").html(text);
+    $(".link").html(fix);
     setTimeout(updateLink(), 72000000000);
 
   });
@@ -163,8 +167,9 @@ function updateSuper() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = `${data.ticker.last}` * 80000;
+    var fix = text.toFixed(5);
 
-    $(".super").html(text);
+    $(".super").html(fix);
     setTimeout(updateSuper(), 72000000000);
 
   });
