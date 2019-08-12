@@ -60,9 +60,10 @@ function updateDiff3() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 19905066.69)  * myjson;
+    var usdm = text.toFixed(3);
 
 
-    $(".price3").html(text);
+    $(".price3").html(usdm);
     setTimeout(updateDiff3(), 72000000000);
 
   });
@@ -89,8 +90,9 @@ function updateChain1() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 5000) * myjson;
+    var usdm = text.toFixed(3);
 
-    $(".chainu").html(text);
+    $(".chainu").html(usdm);
     setTimeout(updateChain1(), 72000000000);
 
   });
@@ -117,8 +119,9 @@ function updateXERO1() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 20000) * myjson;
+    var usdm = text.toFixed(3);
 
-    $(".xerou").html(text);
+    $(".xerou").html(usdm);
     setTimeout(updateXERO1(), 72000000000);
 
   });
@@ -145,8 +148,9 @@ function updateLink1() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 40000) * myjson;
+    var usdm = text.toFixed(3);
 
-    $(".linku").html(text);
+    $(".linku").html(usdm);
     setTimeout(updateLink1(), 72000000000);
 
   });
@@ -173,11 +177,27 @@ function updateSuper1() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
     var text = (`${data.ticker.last}` * 80000) * myjson;
+    var usdm = text.toFixed(3);
 
-    $(".superu").html(text);
+    $(".superu").html(usdm);
     setTimeout(updateSuper1(), 72000000000);
 
   });
 }
 
 setTimeout(updateSuper1(), 72000000000);
+
+//Currenct BTC Price
+function updatePusd() {
+  $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+
+    var text = `${data.ticker.last}` * myjson;
+    var usd = text.toFixed(5);
+
+    $(".priceu").html(usd);
+    setTimeout(updatePusd(), 72000000000);
+
+  });
+}
+
+setTimeout(updatePusd(), 72000000000);
