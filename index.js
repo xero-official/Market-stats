@@ -27,11 +27,11 @@ function updatePer() {
 setTimeout(updatePer(), 72000000000);
 
 //Pulls Circ Supply
-var myjson2;
+//var myjson2;
 
-$.getJSON("https://richlist.arhash.xyz/overalls.php", function(data) {
-  myjson2 = `${data.supply}`;
-});
+//$.getJSON("https://richlist.arhash.xyz/overalls.php", function(data) {
+//  myjson2 = `${data.supply}`;
+//});
 
 // Pulls BTC Price
 var myjson;
@@ -60,7 +60,7 @@ setTimeout(updateDiff2(), 72000000000);
 function updateDiff3() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-    var text = (`${data.ticker.last}` * 19905066.69)  * myjson;
+    var text = (`${data.ticker.last}` * 19905066.69) * myjson;
     var usdm = text.toFixed(3);
 
 
