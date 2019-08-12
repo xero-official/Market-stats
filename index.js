@@ -39,7 +39,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 function updateDiff2() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-    var text = (`${data.ticker.last}` * 16700439);
+    var text = (`${data.ticker.last}` * 19905066.69);
 
 
     $(".price2").html(text);
@@ -53,7 +53,7 @@ setTimeout(updateDiff2(), 72000000000);
 function updateDiff3() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-    var text = (`${data.ticker.last}` * 16700439)  * myjson;
+    var text = (`${data.ticker.last}` * 19905066.69)  * myjson;
 
 
     $(".price3").html(text);
