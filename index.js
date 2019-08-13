@@ -206,3 +206,24 @@ function updatePusd() {
 }
 
 setTimeout(updatePusd(), 72000000000);
+
+//calc btc
+var myjson3;
+
+$.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  myjson3 = `${data.ticker.last}`;
+});
+
+function calc() {
+  var xeroamount = parseFloat(document.getElementById('xeroamount').value); {
+    document.getElementById('result').value = xeroamount * myjson3;
+  }
+}
+
+//calc usd
+
+function calc2() {
+  var xeroamount2 = parseFloat(document.getElementById('xeroamount2').value); {
+    document.getElementById('result2').value = (xeroamount2 * myjson3) * myjson;
+  }
+}
