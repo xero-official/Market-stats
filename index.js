@@ -44,7 +44,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 function updateDiff2() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-    var text = (`${data.ticker.last}` * 19905066.69);
+    var text = (`${data.ticker.last}` * 22942685);
     var fix = text.toFixed(4);
 
 
@@ -60,7 +60,7 @@ setTimeout(updateDiff2(), 72000000000);
 function updateDiff3() {
   $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-    var text = (`${data.ticker.last}` * 19905066.69) * myjson;
+    var text = (`${data.ticker.last}` * 22942685) * myjson;
     var usdm = text.toFixed(3);
 
 
@@ -227,3 +227,11 @@ function calc2() {
     document.getElementById('result2').value = (xeroamount2 * myjson3) * myjson;
   }
 }
+
+//BR BTC
+$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+
+  var text = `${data.ticker.last}` * 24;
+
+  $(".brbtc").html(text);
+});
