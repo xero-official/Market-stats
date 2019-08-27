@@ -1,8 +1,43 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+  <title>Xerom Market</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link type="text/css" rel="stylesheet" href="./css/froala_blocks.css">
+
+  <style>
+    #navigator {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navigator .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    @media (max-width: 720px) {
+      #navigator {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+
+    #navigator a {
+      font-size: 14px;
+    }
+
+    #navigator+section {
+      padding: 250px 0;
+    }
+  </style>
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <link rel="stylesheet" href="style.css">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132755795-9"></script>
   <script>
@@ -19,92 +54,152 @@
 </head>
 
 <body>
+  <header class="bg-dark">
+    <div class="container">
+      <nav class="navbar navbar-expand-md no-gutters">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav10" aria-controls="navbarNav10" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="container">
-    <div class='spacer'>
-      <a href="javascript://" class='wide blue'>
-        <p style="font-size: 26px">Current Price:</p>
-        <p id="dataSupply"></p>
-        <h2 style="font-size: 26px"><span class="price"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide orange'>
-        <p style="font-size: 26px">Market Cap in Bitcoin:</p>
-        <h2 style="font-size: 26px"><span class="price2"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide yellow'>
-        <p style="font-size: 26px">Current Price in USD:</p>
-        <h2 style="font-size: 26px"><span class="priceu"></span> USD</h2>
-      </a>
-      <a href="javascript://" class='wide blue'>
-        <p style="font-size: 26px">Market Cap in USD:</p>
-        <h2 style="font-size: 26px"><span class="price3"></span> USD</h2>
-      </a>
-      <a href="javascript://" class='wide orange'>
-        <p style="font-size: 26px">Price Of a Chain Node:</p>
-        <h2 style="font-size: 26px"><span class="chain"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide yellow'>
-        <p style="font-size: 26px">Price Of a XERO Node:</p>
-        <h2 style="font-size: 26px"><span class="xero"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide blue'>
-        <p style="font-size: 26px">Price Of a Chain Node:</p>
-        <h2 style="font-size: 26px"><span class="chainu"></span> USD</h2>
-      </a>
-      <a href="javascript://" class='wide orange'>
-        <p style="font-size: 26px">Price Of a XERO Node:</p>
-        <h2 style="font-size: 26px"><span class="xerou"></span> USD</h2>
-      </a>
-      <a href="javascript://" class='wide yellow'>
-        <p style="font-size: 26px">Price Of a Link Node:</p>
-        <h2 style="font-size: 26px"><span class="link"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide blue'>
-        <p style="font-size: 26px">Price Of a Link Node:</p>
-        <h2 style="font-size: 26px"><span class="linku"></span> USD</h2>
-      </a>
+        <div class="col-4 col-sm-2 text-center order-lg-6">
+          <a href="https://www.froala.com">
+            <img src="logo.png" height="30" alt="image">
+          </a>
+        </div>
 
+        <div class="collapse navbar-collapse col-12 col-md-5 order-lg-1" id="navbarNav10">
+          <ul class="navbar-nav col-5">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://markets.xerom.org">Markets <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://xerom.org">Homepage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://nodes.xerom.org">Nodes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://wallet.xerom.org">Wallet</a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="navbar-nav justify-content-end col-sm-5 order-lg-12 d-none d-md-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/XeromOfficial"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/xero-official"><i class="fab fa-github"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://discord.gg/ZVb5Man"><i class="fab fa-discord"></i></a>
+          </li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <div class='spacer spacer3x'>
-      <!--<a href="https://github.com/xero-official" class='box blue'>
-        <i class="icon-github"></i>
-        <h2>Github</h2>
-      </a>
-      <a href="https://twitter.com/XeromOfficial" class='box bluefish'>
-        <i class="icon-twitter"></i>
-        <h2>Twitter</h2>
-      </a>-->
-      <a href="https://xerom.org" class='box redgay'>
-        <i class="icon-home"></i>
-        <h2>Main Website</h2>
-      </a>
-      <a href="https://explorer.xerom.org" class='box magenta'>
-        <i class="icon-list-alt"></i>
-        <h2>Explorer</h2>
-      </a>
-      <a href="javascript://" class='wide blue'>
-        <p style="font-size: 26px">Price Of a Super Node:</p>
-        <h2 style="font-size: 26px"><span class="super"></span> BTC</h2>
-      </a>
-      <a href="javascript://" class='wide orange'>
-        <p style="font-size: 26px">Price Of a Super Node:</p>
-        <h2 style="font-size: 26px"><span class="superu"></span> USD</h2>
-      </a>
-      <a href="javascript://" class='wide redgay'>
-        <img src="logo.png" style="width: 100%; margin-top: 28px">
-      </a>
-      <a href="javascript://" class='wide blue'>
-        <input type="text" id="xeroamount" style="width: 95px; height: 40px; font-size: 14px" oninput="calc();"> XERO</input>
-        <input type="text" id="result" style="width: 95px; height: 40px; font-size: 14px"> BTC</input>
-        <h3> </h3>
-        <input type="text" id="xeroamount2" style="width: 95px; height: 40px; font-size: 14px" oninput="calc2();"> XERO</input>
-        <input type="text" id="result2" style="width: 95px; height: 40px; font-size: 14px"> USD</input>
-      </a>
-      <!--<h1><span class="brbtc"></span></h1>-->
+  <section class="fdb-block">
+    <div class="container">
+
+      <div class="row text-left justify-content-center pt-5">
+        <div class="col-12 col-md-6 col-lg-5 m-sm-auto">
+          <div class="row">
+            <div class="col-3">
+              <img alt="image" class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/9/9a/BTC_Logo.svg">
+            </div>
+            <div class="col-9">
+              <h3><strong>XERO to BTC</strong></h3>
+              <p><span class="price"></span> BTC</p>
+              <a href="javascript://" style="text-decoration: none">
+                <input type="text" id="xeroamount" style="width: 95px; height: 40px; font-size: 14px; text-decoration: none; color: black" oninput="calc();"> XERO</input><br><br>
+                <input type="text" id="result" style="width: 95px; height: 40px; font-size: 14px; text-decoration: none; color: black"> BTC</input>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5 m-sm-auto pt-3 pt-sm-5 pt-md-0">
+          <div class="row">
+            <div class="col-3">
+              <img alt="image" class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Dollar_Sign.svg">
+            </div>
+            <div class="col-9">
+              <h3><strong>XERO to USD</strong></h3>
+              <p><span class="priceu"></span> USD</p>
+              <a href="javascript://" style="text-decoration: none">
+              <input type="text" id="xeroamount2" style="width: 95px; height: 40px; font-size: 14px; text-decoration: none; color: black" oninput="calc2();"> XERO</input><br><br>
+              <input type="text" id="result2" style="width: 95px; height: 40px; font-size: 14px; text-decoration: none; color: black"> USD</input>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <section class="fdb-block">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <h1>Node Tiers</h1>
+        </div>
+      </div>
+
+      <div class="row mt-5 align-items-top">
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5 m-auto col-xl-3 text-left">
+          <div class="bg-gray p-3 text-center rounded sl-1">
+            <h2 class="font-weight-light">Chain Node Value:</h2>
+            <p class="h2"><span class="chain"></span> BTC</p>
+            <p class="h2"><span class="chainu"></span> USD</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5 m-auto col-xl-3 text-left pt-5 pt-md-0">
+          <div class="bg-gray p-3 text-center rounded sl-1">
+            <h2 class="font-weight-light">Xero Node Value:</h2>
+            <p class="h2"><span class="xero"></span> BTC</p>
+            <p class="h2"><span class="xerou"></span> USD</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5 m-auto col-xl-3 text-left pt-5 pt-xl-0">
+          <div class="bg-gray p-3 text-center rounded sl-1">
+            <h2 class="font-weight-light">Link Node Value:</h2>
+            <p class="h2"><span class="link"></span> BTC</p>
+            <p class="h2"><span class="linku"></span> USD</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5 m-auto col-xl-3 text-left pt-5 pt-xl-0">
+          <div class="bg-gray p-3 text-center rounded sl-1">
+            <h2 class="font-weight-light">Super Node Value</h2>
+            <p class="h2"><span class="super"></span> BTC</p>
+            <p class="h2"><span class="superu"></span> USD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fdb-block py-0">
+    <div class="container py-5 my-5" style="background-image: url(imgs/shapes/2.svg);">
+      <div class="row justify-content-center py-5">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+          <div class="fdb-box">
+            <h1>XERO's Market Cap</h1>
+            <p class="lead">
+              It's important to note that the market cap of xerom is not 100% accurate due to the aridrop and dormant wallets which came with it.
+            </p>
+            <p class="mt-4">
+              <p class="h2"><span class="price2"></span> BTC</p>
+              <p class="h2"><span class="price3"></span> USD</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <script src="index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -112,4 +207,4 @@
 
 </body>
 
-</hmtl>
+</html>
