@@ -156,7 +156,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 //BTC Value MCAP
 $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-  var text = (`${data.ticker.last}` * 22942685);
+  var text = (`${data.ticker.last}` * 23703474);
   var fix = text.toFixed(4);
 
 
@@ -167,7 +167,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 //USD Value MCAP
 $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
-  var text = (`${data.ticker.last}` * 22942685) * myjson;
+  var text = (`${data.ticker.last}` * 23703474) * myjson;
   var usdm = text.toFixed(3);
 
 
