@@ -7,6 +7,32 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 
 });
 
+//TX BTC Price
+$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+
+  var text = `${data.ticker.last}` * 0.000021;
+  var final = text.toFixed(14);
+
+  $(".txb").html(final);
+
+});
+
+//TX USD Price
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 0.000021;
+    var add = text * myjson;
+    var final = add.toFixed(10);
+
+    $(".txu").html(final);
+
+  });
+
+});
+
 //calc btc
 var myjson3;
 
@@ -251,3 +277,263 @@ function calc2() {
     document.getElementById('result2').value = (xeroamount2 * myjson3) * myjson;
   }
 }
+
+//BR 1 to 1,000,000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 20;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 4;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br1").html(final);
+    $(".br2").html(final1);
+    $(".br3").html(final2);
+
+  });
+
+});
+
+//BR 2,000,000 to 3,000,000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 18;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 4;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br12").html(final);
+    $(".br22").html(final1);
+    $(".br32").html(final2);
+
+  });
+
+});
+
+//BR 3,000,000 to 4,000,000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 16;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 6;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br13").html(final);
+    $(".br23").html(final1);
+    $(".br33").html(final2);
+
+  });
+
+});
+
+//BR 4,000,000 to 5,000,000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 14;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 6;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br14").html(final);
+    $(".br24").html(final1);
+    $(".br34").html(final2);
+
+  });
+
+});
+
+//BR 5,000,000 to 6,000,000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 12;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 8;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br15").html(final);
+    $(".br25").html(final1);
+    $(".br35").html(final2);
+
+  });
+
+});
+
+//BR 6,000,000 to 7,000,0000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 10;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 10;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br16").html(final);
+    $(".br26").html(final1);
+    $(".br36").html(final2);
+
+  });
+
+});
+
+//BR 7,000,000 to 8,000,0000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 8;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 10;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 2;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br17").html(final);
+    $(".br27").html(final1);
+    $(".br37").html(final2);
+
+  });
+
+});
+
+//BR 8,000,000 to 9,000,0000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 6;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 12;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 1.5;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br18").html(final);
+    $(".br28").html(final1);
+    $(".br38").html(final2);
+
+  });
+
+});
+
+//BR 9,000,000 to 10,000,0000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 4;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 12;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 1.5;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br19").html(final);
+    $(".br29").html(final1);
+    $(".br39").html(final2);
+
+  });
+
+});
+
+//BR 9,000,000 to 10,000,0000
+$.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
+  myjson = `${data.market_data.current_price.usd}`;
+
+  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+
+    var text = `${data.ticker.last}` * 2;
+    var add = text * myjson;
+    var final = add.toFixed(4);
+
+    var text1 = `${data.ticker.last}` * 14;
+    var add1 = text1 * myjson;
+    var final1 = add1.toFixed(4);
+
+    var text2 = `${data.ticker.last}` * 1.5;
+    var add2 = text2 * myjson;
+    var final2 = add2.toFixed(4);
+
+    $(".br110").html(final);
+    $(".br210").html(final1);
+    $(".br310").html(final2);
+
+  });
+
+});
