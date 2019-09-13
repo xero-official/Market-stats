@@ -39,7 +39,7 @@ var myjson3;
 $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
   myjson3 = `${data.ticker.last}`;
 
-  $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0x93b7a5c74793dcba765a1dd163e1744622306651', function(result) {
+  $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0x93b7a5c74793dcba765a1dd163e1744622306651', function(result) {
 
     var amount = `${result.result}` / 1000000000000000000;
     var btcv = amount * myjson3;
@@ -53,7 +53,7 @@ $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
 
   });
 
-  $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0xe44389c26fdeb581dea7df91efd0665a7cd404c1', function(result) {
+  $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0xe44389c26fdeb581dea7df91efd0665a7cd404c1', function(result) {
 
     var amountl = `${result.result}` / 1000000000000000000;
     var btcvl = amountl * myjson3;
@@ -67,7 +67,7 @@ $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
 
   });
 
-  $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0xc46cc53b8f09fe6f4eb6b6df8ad5c6fe5da6638b', function(result) {
+  $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0xc46cc53b8f09fe6f4eb6b6df8ad5c6fe5da6638b', function(result) {
 
     var amountx = `${result.result}` / 1000000000000000000;
     var btcvx = amountx * myjson3;
@@ -81,7 +81,7 @@ $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
 
   });
 
-  $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0x3717ad55666577eb92fca3e5f9f71958bd60c620', function(result) {
+  $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0x3717ad55666577eb92fca3e5f9f71958bd60c620', function(result) {
 
     var amountc = `${result.result}` / 1000000000000000000;
     var btcvc = amountc * myjson3;
@@ -95,7 +95,7 @@ $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
 
   });
 
-  $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0xb69b9216b5089dc3881a4e38f691e9b6943dfa11', function(result) {
+  $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0xb69b9216b5089dc3881a4e38f691e9b6943dfa11', function(result) {
 
     var amountd = `${result.result}` / 1000000000000000000;
     var btcvd = amountd * myjson3;
@@ -133,7 +133,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
   $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
     myjson3 = `${data.ticker.last}`;
 
-    $.getJSON('https://blocks.xerom.org/api?module=account&action=balance&address=0xb69b9216b5089dc3881a4e38f691e9b6943dfa11', function(result) {
+    $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0xb69b9216b5089dc3881a4e38f691e9b6943dfa11', function(result) {
 
       var amountdu = `${result.result}` / 1000000000000000000;
       var btcvdu = amountdu * myjson3;
