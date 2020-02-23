@@ -1,5 +1,5 @@
 //Currenct BTC Price
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}`
 
@@ -8,7 +8,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //TX BTC Price
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * 0.000021;
   var final = text.toFixed(14);
@@ -21,7 +21,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 0.000021;
     var add = text * myjson;
@@ -36,7 +36,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 //calc btc
 var myjson3;
 
-$.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+$.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
   myjson3 = `${data.ticker.last}`;
 
   $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0x93b7a5c74793dcba765a1dd163e1744622306651', function(result) {
@@ -114,7 +114,7 @@ $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
 });
 
 //Pulls % Change
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.change}`
 
@@ -130,7 +130,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 
   var myjson3;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
     myjson3 = `${data.ticker.last}`;
 
     $.getJSON('https://explorer.xerom.org/api?module=account&action=balance&address=0xb69b9216b5089dc3881a4e38f691e9b6943dfa11', function(result) {
@@ -154,20 +154,26 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 });
 
 //BTC Value MCAP
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+var mcap
+$.getJSON("https://cors-anywhere.herokuapp.com/https://richlist.arhash.xyz/overalls.php", function(data) {
+  mcap = `${data.supply}`;
+  console.log(mcap + ' supply');
+});
 
-  var text = (`${data.ticker.last}` * 23703474);
-  var fix = text.toFixed(4);
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
+var text = (`${data.ticker.last}` * mcap);
+var fix = text.toFixed(4);
 
 
-  $(".price2").html(fix);
+$(".price2").html(fix);
+
 
 });
 
 //USD Value MCAP
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
-  var text = (`${data.ticker.last}` * 23703474) * myjson;
+  var text = (`${data.ticker.last}` * mcap) * myjson;
   var usdm = text.toFixed(3);
 
 
@@ -176,7 +182,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Chain Node BTC
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * 5000;
   var fix = text.toFixed(5);
@@ -186,7 +192,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Chain Node USD
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = (`${data.ticker.last}` * 5000) * myjson;
   var usdm = text.toFixed(3);
@@ -196,7 +202,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //XERO Node BTC
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * 20000;
   var fix = text.toFixed(5);
@@ -206,7 +212,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //XERO Node USD
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = (`${data.ticker.last}` * 20000) * myjson;
   var usdm = text.toFixed(3);
@@ -216,7 +222,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Link Node BTC
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * 40000;
   var fix = text.toFixed(5);
@@ -226,7 +232,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Link Node USD
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = (`${data.ticker.last}` * 40000) * myjson;
   var usdm = text.toFixed(3);
@@ -236,7 +242,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Super Node BTC
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * 80000;
   var fix = text.toFixed(5);
@@ -246,7 +252,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Super Node USD
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = (`${data.ticker.last}` * 80000) * myjson;
   var usdm = text.toFixed(3);
@@ -256,7 +262,7 @@ $.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
 });
 
 //Currenct BTC Price
-$.getJSON('https://tradecx.io/api/tickers/xerobtc', function(data) {
+$.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
 
   var text = `${data.ticker.last}` * myjson;
   var usd = text.toFixed(5);
@@ -282,7 +288,7 @@ function calc2() {
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 20;
     var add = text * myjson;
@@ -308,7 +314,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 18;
     var add = text * myjson;
@@ -334,7 +340,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 16;
     var add = text * myjson;
@@ -360,7 +366,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 14;
     var add = text * myjson;
@@ -386,7 +392,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 12;
     var add = text * myjson;
@@ -412,7 +418,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 10;
     var add = text * myjson;
@@ -438,7 +444,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 8;
     var add = text * myjson;
@@ -464,7 +470,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 6;
     var add = text * myjson;
@@ -490,7 +496,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 4;
     var add = text * myjson;
@@ -516,7 +522,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=true", function(data) {
   myjson = `${data.market_data.current_price.usd}`;
 
-  $.getJSON("https://tradecx.io/api/tickers/xerobtc", function(data) {
+  $.getJSON("https://asymetrex.com/api/tickers/xerobtc", function(data) {
 
     var text = `${data.ticker.last}` * 2;
     var add = text * myjson;
