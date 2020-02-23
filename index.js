@@ -154,18 +154,16 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/bitcoin?tickers=true&market_da
 });
 
 //BTC Value MCAP
-var mcap
-$.getJSON("https://cors-anywhere.herokuapp.com/https://richlist.arhash.xyz/overalls.php", function(data) {
-  mcap = `${data.supply}`;
-  console.log(mcap + ' supply');
-});
+var mcap = 30026918;
+console.log(mcap + ' supply');
+
 
 $.getJSON('https://asymetrex.com/api/tickers/xerobtc', function(data) {
-var text = (`${data.ticker.last}` * mcap);
-var fix = text.toFixed(4);
+  var text = (`${data.ticker.last}` * mcap);
+  var fix = text.toFixed(4);
 
 
-$(".price2").html(fix);
+  $(".price2").html(fix);
 
 
 });
